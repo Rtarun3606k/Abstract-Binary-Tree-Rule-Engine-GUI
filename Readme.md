@@ -36,7 +36,6 @@ This project is a Rule Evaluation System that allows users to create, combine, a
    git clone https://github.com/Rtarun3606k/Abstract-Binary-Tree-Rule-Engine-GUI.git
    cd Abstract-Binary-Tree-Rule-Engine-GUI/Backend
    ```
-````
 
 2. **Create a virtual environment and activate it:**
 
@@ -126,3 +125,4 @@ http
 - **POST /create_rule**: Create a new rule.
 - **POST /combine_rules**: Combine multiple rules.
 - **POST /evaluate_rule**: Evaluate
+````
