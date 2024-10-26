@@ -58,7 +58,7 @@ def create_rule_endpoint():
         rule_ast = create_rule(rule_string)
         serialized_ast = serialize_ast(rule_ast)
         # serialized_ast  = ast.dump(rule_ast,indent=4)
-        print(serialized_ast)
+        # print(serialized_ast)
 
         new_rule = Rule(rule_name=rule_name, rule_ast=str(serialized_ast))
         db.session.add(new_rule)
@@ -83,7 +83,7 @@ def evaluate_rule_endpoint():
 
         # Evaluate the rule using the converted AST node
         result = evaluate_rule(rule_ast, data)
-        return jsonify({"result": result,"message":"evaluated sucessfully"}), 200
+        return jsonify({"result": f"{result}","message":"evaluated sucessfully"}), 200
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
     except SyntaxError as e:

@@ -56,10 +56,10 @@ const Page = () => {
     const response = await fetch(`${url}/${value}`, options);
     const data = await response.json();
     if (response.ok) {
-      console.log(data);
+      // console.log(data);
       setAnswer(data);
     } else {
-      console.log(data);
+      // console.log(data);
       setAnswer(data);
     }
   };
@@ -87,7 +87,7 @@ const Page = () => {
       setEvaluateDataRule(parsedData);
     } catch (error) {
       // Handle invalid JSON input
-      console.error("Invalid JSON:", error);
+      // console.error("Invalid JSON:", error);
     }
   };
 
@@ -205,21 +205,29 @@ const Page = () => {
           {answer && (
             <>
               {answer.message && (
-                <h2 className="text-xl mb-4">{answer.message}</h2>
+                <h2 className="text-xl mb-4 text-green-400 items-center flex justify-center">
+                  RESPONSE : {answer.message}
+                </h2>
               )}
-              {answer.error && <h2 className="text-xl mb-4">{answer.error}</h2>}
+              {answer.error && (
+                <h2 className="text-xl mb-4 text-red-600">
+                  ERROR : {answer.error}
+                </h2>
+              )}
               {answer.combined_ast && (
-                <h2 className="text-xl mb-4">{answer.combined_ast}</h2>
+                <h2 className="text-xl mb-4">
+                  Combined AST : {answer.combined_ast}
+                </h2>
               )}
               {answer.result && (
-                <h2 className="text-xl mb-4">{answer.result}</h2>
+                <h2 className="text-xl mb-4">RESULT : {answer.result}</h2>
               )}
-              {!answer.result && (
-                <h2 className="text-xl mb-4">{answer.result}</h2>
+
+              {answer.ast && (
+                <SyntaxHighlighter language="json" style={atomOneDark}>
+                  {JSON.stringify(answer.ast, null, 2)}
+                </SyntaxHighlighter>
               )}
-              <SyntaxHighlighter language="json" style={atomOneDark}>
-                {JSON.stringify(answer.ast, null, 2)}
-              </SyntaxHighlighter>
             </>
           )}
         </div>
