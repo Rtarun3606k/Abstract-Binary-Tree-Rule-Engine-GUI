@@ -114,11 +114,7 @@ This project is a Rule Evaluation System that allows users to create, combine, a
    npm run dev
    ```
 
-   The frontend server will start at
-
-http
-
-`://localhost:5173`.
+   The frontend server will start at `http://localhost:5173`.
 
 ## API Endpoints
 
