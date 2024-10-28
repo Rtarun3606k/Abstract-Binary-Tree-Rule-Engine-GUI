@@ -3,6 +3,7 @@
 A Rule Evaluation System that enables users to create, combine, and evaluate rules based on given data. This system includes a frontend built with React and a backend built with Python.
 
 ---
+## video link to setup application : https://drive.google.com/file/d/1tt-x9sUJSFFpjNlDx7zaEzn_Y0Y1LwMN/view?usp=drive_link
 
 ## Table of Contents
 
